@@ -3,7 +3,7 @@ title: "关于 Docker 自身研究"
 date: 2024-11-17T01:47:57+08:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["Docker"]
+tags: ["Docker","Container"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
