@@ -95,7 +95,7 @@ The configuration of the interface will be restored to the default. Continue? [Y
 
 ```
 
-# SW-1 (user)
+### SW-1 (user)
 在SW-1切换到用户视图，然后尝试连接到MSR-1：
 ```
 <SW-1> ssh2 192.168.1.1
