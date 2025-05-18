@@ -71,7 +71,7 @@ System View: return to User View with Ctrl+Z.
 
 ```
 
-# SW-1
+### SW-1
 首先进入系统视图：
 ```
 <H3C>sys
