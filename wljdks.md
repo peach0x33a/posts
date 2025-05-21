@@ -54,8 +54,8 @@ System View: return to User View with Ctrl+Z.
 ```
 [MSR-1]local-user WLJDKS123 class manage
 [MSR-1-luser-manage-WLJDKS123]password-control length 9
-[MSR-1-luser-manage-WLJDKS123]password simple WLJDKS123
 [MSR-1-luser-manage-WLJDKS123]undo password-control complexity user-name check
+[MSR-1-luser-manage-WLJDKS123]password simple WLJDKS123
 [MSR-1-luser-manage-WLJDKS123]service-type ssh
 [MSR-1-luser-manage-WLJDKS123]authorization-attribute user-role network-admin
 [MSR-1-luser-manage-WLJDKS123]quit
