@@ -7,7 +7,7 @@ tags: ["LinuxDesktop", "VXE"]
 author: "Me"
 showToc: true
 TocOpen: false
-draft: true
+draft: false
 hidemeta: false
 comments: false
 description: "解决Linux下ATK Webhub无法连接到设备的问题"
