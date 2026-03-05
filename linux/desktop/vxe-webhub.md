@@ -3,7 +3,7 @@ title: 如何解决Linux下ATK Webhub无法连接到设备的问题
 date: 2025-06-15T19:59:39+08:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["LinuxDesktop", "VXE"]
+tags: ["LinuxDesktop", "VXE", "ATK", "网页驱动"]
 author: "Me"
 showToc: true
 TocOpen: false
@@ -39,11 +39,11 @@ cover:
 
 本文引用于 [Reddit: USERNAME123_321 的回答](https://www.reddit.com/r/linux_gaming/comments/1feizmm/comment/mx5sbam/?context=3) ，本站对其回答进行翻译处理。
 
-原po使用的鼠标为蜻蜓R1-SE，很巧的是译者是同款鼠标。
+原po使用的鼠标为蜻蜓R1-SE，很巧的是译者是同款鼠标。不过经过实测，`ATK RS6 Air`键盘也可以用这一套(或者说所有Linux系统下网页驱动无法正常连接的都可以)，只不过需要替换VendorID
 
 ## 正文
 
-1. 使用命令`bash lsusb`查找鼠标的 idVendor 和 idProduct，在"ID"后方有两个 16 进制数值，使用冒号分割，例如：
+1. 使用命令`bash lsusb`查找设备的 idVendor 和 idProduct，在"ID"后方有两个 16 进制数值，使用冒号分割，例如：
 
 ```
 Bus 003 Device 005: ID 3554:{idProduct} Compx VXE Mouse 1K Dongle
@@ -51,7 +51,7 @@ Bus 003 Device 005: ID 3554:{idProduct} Compx VXE Mouse 1K Dongle
                     idVendor  idProduct
 ```
 
-记住其中的idVendor值
+记住其中的idVendor值，
 
 2. 切换至 ROOT 用户
 3. 在/etc/udev/rules.d/中新建文件:
@@ -60,10 +60,17 @@ Bus 003 Device 005: ID 3554:{idProduct} Compx VXE Mouse 1K Dongle
 4. 在刚才的文件中，写入以下内容：
 
 ```
-KERNEL=="hidraw\*", ATTRS{idVendor}=="idVendor", MODE="0666"
+KERNEL=="hidraw*", ATTRS{idVendor}=="idVendor", MODE="0666"
 ```
-
 - 这将为每个用户授予指定制造商 ID 的 USB 设备读写权限
+你也可以这样写:
+```
+KERNEL=="hidraw*", ATTRS{idVendor}=="idVendor", ATTRS{idProduct}=="idProduct", MODE="0666", GROUP="plugdev"
+                                     ^                               ^
+                                    idVendor                        idProduct
+```
+但这样就意味着你每新增一个设备都要来填一遍idProduct，除非你有特别需求，否则我建议你按上面的写法
+
 
 1. 使用命令将你的用户添加到 input 组中
    ```bash
@@ -71,8 +78,6 @@ KERNEL=="hidraw\*", ATTRS{idVendor}=="idVendor", MODE="0666"
    ```
 2. 重新启动操作系统
 3. 打开[ATK Webhub](https://hub.atk.pro/)，此时重新执行配对操作，配对完成后应该可以正常对设备进行操作。
-
-
 
 ## 问题诊断
 
