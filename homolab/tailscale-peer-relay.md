@@ -49,7 +49,7 @@ cover:
 
 [Tailscale](https://tailscale.com/) 是个好东西，不过本文不会赘述 Tailscale 如何安装配置，只讲与 Peer Relay 相关的东西。
 
-不过，在弄懂 Peer Relay 之前，还是需要对 Tailscale 的工作方式有一点认知的，不想看的话，可以选择跳过：[开始配置 Peer Relay](#开始配置-peer-relay)。
+不过，在弄懂 Peer Relay 之前，还是需要对 Tailscale 的工作方式有一点认知的，不想看的话，可以选择跳过：[开始配置 Peer Relay](#配置-peer-relay)。
 
 在两台设备建立连接时，Tailscale 会先通过 DERP 服务器建立初始连接，然后在后台不断尝试升级路径。优先级是：**直连 > Peer Relay > DERP**。一旦条件允许，Tailscale 会自动切换到更优的路径。
 
