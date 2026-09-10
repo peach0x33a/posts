@@ -13,7 +13,6 @@ comments: false
 description: ""
 disableHLJS: true # to disable highlightjs
 disableShare: true
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: true
@@ -23,11 +22,11 @@ ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+  image: "<image path/url>" # image path/url
+  alt: "<alt text>" # alt text
+  caption: "<text>" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: true # only hide on current single page
 ---
 
 ## 前言
@@ -40,18 +39,17 @@ cover:
 
 > [!Tip] 在编写博客的文章时，将默认读者有流畅访问 Github / Google 等网站的能力。
 
-
 ## 正文
 
 <!-- ### 安装 fcitx5-rime -->
 
 ### 安装 RIME-ICE (雾凇拼音)
 
-[GITHUB REPO:  RIME-ICE (雾凇拼音)](https://github.com/iDvel/rime-ice)
+[GITHUB REPO: RIME-ICE (雾凇拼音)](https://github.com/iDvel/rime-ice)
 
-> 雾凇拼音 README.md: <br> 雾凇拼音提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。
+> 雾凇拼音 README.md:
+> 雾凇拼音提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。
 
 本文中使用 RIME 官方的 [/plum/(东风破) 安装雾凇拼音](https://github.com/iDvel/rime-ice#%E4%B8%9C%E9%A3%8E%E7%A0%B4-plum)
 
 ### 为 RIME 配置皮肤
-
